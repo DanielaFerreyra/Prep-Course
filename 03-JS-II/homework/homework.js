@@ -66,22 +66,23 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
-  // switch (color) {
-  //  case "blue":
-  //     "This is blue";
-  //    break;
-  // case "red":
-  //     "This is red";
-  //   break;
-  //  case "green":
-  //     "This is green";
-  //    break;
-  //  case "orange":
-  //    "This is orange";
-  //    break;
-  //  default:
-  //    break;
-  //}
+  switch (color) {
+    case "blue":
+      return "This is blue";
+      break;
+    case "red":
+      return "This is red";
+      break;
+    case "green":
+      return "This is green";
+      break;
+    case "orange":
+      return "This is orange";
+      break;
+    default:
+      return "Color not found";
+      break;
+  }
 }
 
 function esDiezOCinco(numero) {
@@ -163,14 +164,14 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
-
-  if (numero == 0 || numero == 1) {
-    return false;
-  } else if (numero % numero == 0 && numero % 1 == 0) {
-    return true;
-  } else {
-    return false;
+  if (numero < 2) return false;
+  if (numero === 2) return true;
+  for (var i = 2; i < numero; i++) {
+    if (numero % i === 0) {
+      return false;
+    }
   }
+  return true;
 }
 
 function esVerdadero(valor) {
@@ -187,17 +188,18 @@ function tablaDelSeis() {
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí
-
+  var array = [];
   for (var i = 0; i < 11; i++) {
-    return 6 * i;
+    array.push(6 * i);
   }
+  return array;
 }
 
 function tieneTresDigitos(numero) {
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  var numero = "";
-  if ((numero.length = 5)) {
+  var str = numero.toString();
+  if (str.length == 3) {
     return true;
   } else {
     return false;
@@ -208,10 +210,13 @@ function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+  var i = 0;
   do {
     numero = numero + 5;
-  } while (numero < 5);
+    i = i + 1;
+  } while (i < 8);
   {
+    return numero;
   }
 }
 
